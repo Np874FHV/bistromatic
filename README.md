@@ -71,7 +71,7 @@ The following features are implemented:
 
 -> `//`,`%`, the quotient and remainder of two whole numbers.
 
--> `^`, the power operator. The second one must be whole (and positive for the moment).
+-> `^`, the power operator. The second number must be whole (and positive for the moment).
 
 -> `(`,`)`, the parenthesis, allowing to force priorities.
 
@@ -214,7 +214,7 @@ You can use the `debug` binary the same way as `main` (please refer to the Usage
 
 - `//`,`%`, the quotient and remainder of two whole numbers.
 
-- `^`, the power operator. The second one must be whole (and positive for the moment).
+- `^`, the power operator. The second number must be whole (and positive for the moment).
 
 - `(`,`)`, the parenthesis, allowing to force priorities.
 
