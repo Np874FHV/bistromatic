@@ -116,8 +116,7 @@ For example:
     $ ls
     main    out.txt
     $ cat out.txt
-    4.3333
-    $ 
+    4.3333$ 
 ```
 
 Be careful, if the output file already exists, it will be overrided.
@@ -148,8 +147,7 @@ For example:
     $ ls
     input.txt    main    out.txt
     $ cat out.txt
-    101
-    $ 
+    101$ 
 ```
 
 
