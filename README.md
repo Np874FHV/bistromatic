@@ -116,7 +116,7 @@ For example:
     4.3333 
 ```
 
-Be careful, if the output file already exists, it will be overrided.
+Be careful: if the output file already exists, it will be overrided.
 
 - Using a file as input
 
