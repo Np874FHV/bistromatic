@@ -1,4 +1,3 @@
-
 # Bistromatic
 
 This project is a calculator inspired from an EPITECH academic project that handles infinite numbers in any base. The main goal is performance.
@@ -7,18 +6,6 @@ This project is a calculator inspired from an EPITECH academic project that hand
 
 
 ## Installation
-
-A ```bistro.a``` static library is given.
-
-Otherwise, ```src``` and ```Makefile``` can be downloaded and ```bistro.a``` can be created with the following command:
-
-```bash
-    $ make bistro
-    $ rm *.o  # To remove all created object files
-```
-
-Please refer to the Usage/Examples section.
-## Run Locally
 
 Clone the project
 
@@ -32,6 +19,16 @@ Go to the project directory
     $ cd bistromatic
 ```
 
+Create `bistro.a` static library to include it in a project. Be warned: `.o` object files will also be created.
+
+```bash
+    $ make bistro
+    $ rm *.o  # To remove all created object files
+```
+
+Please refer to the Usage/Examples section.
+## Run Locally
+
 Create main binary or use the given one. Be warned, a `bistro.a` and `.o` object files will also be created.
 
 ```bash
@@ -44,11 +41,13 @@ You can delete all `make`-created files by using:
     $ make clean
 ```
 
-You can use the `main` binary in three ways
+You can use the `main` binary in three ways:
 
 - Without any argument
 
-The base is 10 and the maximum decimal precision is 100 by default.
+The base is 10 and the maximum decimal precision is 100 by default. You can easily modify them through the main.c file.
+
+
 Run the main binary:
 
 ```bash
@@ -74,6 +73,8 @@ The following features are implemented:
 -> `^`, the power operator. The second number must be whole (and positive for the moment).
 
 -> `(`,`)`, the parenthesis, allowing to force priorities.
+
+-> A maximum decimal precision is implemented. It is taken into account only when dividing.
 
 The division by `0` is of course forbidden and makes the program to fail.
 
@@ -147,7 +148,7 @@ For example:
     $ ls
     input.txt    main    out.txt
     $ cat out.txt
-    101$ 
+    101.001$ 
 ```
 
 
@@ -215,6 +216,8 @@ You can use the `debug` binary the same way as `main` (please refer to the Usage
 - `^`, the power operator. The second number must be whole (and positive for the moment).
 
 - `(`,`)`, the parenthesis, allowing to force priorities.
+
+- A maximum decimal precision is implemented. It is taken into account only when dividing.
 
 - Unmatched parenthesis, incorrect bases, incorrect syntax will also create errors.
 
