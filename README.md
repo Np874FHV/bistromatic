@@ -178,6 +178,22 @@ To use the `bistro.a` static library, include the `handle_request.h` file to you
 ```
 
 You can use any input and output, as long as they are of `FILE *` type.
+
+You can also use the `get_result` function, that directly returns a number:
+
+```
+struct number
+{
+    int positive;                                                                       // 0 = negative, positive otherwise
+    int *whole_part;
+    size_t whole_part_size;
+    int *decimal_part;
+    size_t decimal_part_size;
+};                                                                                      // src/declarations.h
+
+struct number *get_result(FILE *input, const char *base, size_t decimal_precision);     // src/handle_request.h
+```
+
 ## Running Tests
 
 To run tests, run the following command
