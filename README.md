@@ -26,7 +26,6 @@ Create `bistro.a` static library to include it in a project. Be warned: `.o` obj
     $ rm *.o  # To remove all created object files
 ```
 
-Please refer to the Usage/Examples section.
 ## Run Locally
 
 Create main binary or use the given one. Be warned, a `bistro.a` and `.o` object files will also be created.
