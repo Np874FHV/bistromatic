@@ -232,7 +232,7 @@ You can use the `debug` binary the same way as `main` (please refer to the Usage
 
 - Fast power: `a ^ 5 = a * ((a ^ 2) ^ 2)`
 
-- Only one number allocation by operation. The usual division was the hardest function to implement. How to compute `13.78 / 4458.455455 = a / b` efficienly? 
+- No more than one number allocation by operation. The usual division was the hardest function to implement. How to compute `13.78 / 4458.455455 = a / b` efficienly? 
 
 Consider `n` the length of the base.
 I implemented a function that tests if `b * n ^ (-i) > a`. If it is true, then substract `b * n ^ (-i)` to the result, without creating any temporary number. The brute-force solution was, in the previous example, to do 
