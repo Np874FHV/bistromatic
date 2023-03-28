@@ -3,8 +3,6 @@
 This project is a calculator inspired from an EPITECH academic project that handles infinite numbers in any base. The main goal is performance.
 
 
-
-
 ## Installation
 
 Clone the project
@@ -240,6 +238,8 @@ You can use the `debug` binary the same way as `main` (please refer to the Usage
 
 - Division, euclidean division and modulo by 0
 
+- Power by a negative whole number : `a ^ (-b) = (1 / a) ^ b`
+
 - Power by a decimal number
 
 - `main` can be run in three ways (plese refer to Run Locally)
@@ -250,7 +250,7 @@ You can use the `debug` binary the same way as `main` (please refer to the Usage
 
 - Fast power: `a ^ 5 = a * ((a ^ 2) ^ 2)`
 
-- No more than one number allocation by operation. The usual division was the hardest function to implement. How to compute `13.78 / 4458.455455 = a / b` efficienly? 
+- No more than one number allocation by operation. The usual division was the hardest function to implement. How to compute `13.78 / 4458.455455 = a / b` effectively? 
 
 Consider `n` the length of the base.
 I implemented a function that tests if `b * n ^ (-i) > a`. If it is true, then substract `b * n ^ (-i)` to the result, without creating any temporary number. The brute-force solution was, in the previous example, to do 
@@ -269,7 +269,7 @@ Which is very slow.
 
 - Handle bugs, but I didn't find any in my tests for the moment.
 
-- Implement power by a negative whole number : `a ^ (-b) = (1 / a) ^ b`
+
 ## License
 
 Please refer to the LICENCE file.
