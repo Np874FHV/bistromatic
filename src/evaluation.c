@@ -96,7 +96,7 @@ eval(struct token_list *input, struct token_list *output, int base_length,
         break;
     case POW:
 
-        if (power(output->next->number, output->number, base_length))
+        if (power(output->next->number, output->number, base_length, decimal_precision))
             goto error_eval;
         pop_token_list(&new_output);
         break;

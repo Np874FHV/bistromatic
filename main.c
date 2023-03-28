@@ -26,14 +26,16 @@ size_t string_to_size_t(const char *str)
 
 static int interactive(void)
 {
-    printf("Entering interactive mode.\nAny incorrect request will properly close "
-           "the program.\n");
+    printf(
+        "Entering interactive mode.\nAny incorrect request will properly close "
+        "the program.\n");
     int result = 0;
     while (!result)
     {
         printf("bistro$ ");
         fflush(stdout);
-        result = handle_request(stdin, stdout, DEFAULT_BASE, DEFAULT_MAX_PRECISION);
+        result =
+            handle_request(stdin, stdout, DEFAULT_BASE, DEFAULT_MAX_PRECISION);
         if (!result)
             printf("\n");
     }

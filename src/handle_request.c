@@ -33,7 +33,8 @@ int handle_request(FILE *input, FILE *output, const char *base,
     return 0;
 }
 
-struct number *get_result(FILE *input, const char *base, size_t decimal_precision)
+struct number *get_result(FILE *input, const char *base,
+                          size_t decimal_precision)
 {
     if (!input || !base)
         return NULL;
