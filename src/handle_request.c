@@ -8,6 +8,8 @@
 int handle_request(FILE *input, FILE *output, const char *base,
                    size_t decimal_precision)
 {
+    if (!input || !output || !base)
+        return 1;
     struct token_list *tl = get_tokens(input, base);
     if (!tl)
     {
@@ -29,4 +31,25 @@ int handle_request(FILE *input, FILE *output, const char *base,
     print_number(result, base, output);
     destroy_number(result);
     return 0;
+}
+
+struct number *get_result(FILE *input, const char *base, size_t decimal_precision)
+{
+    if (!input || !base)
+        return NULL;
+    struct token_list *tl = get_tokens(input, base);
+    if (!tl)
+    {
+        fprintf(stderr, "Incorrect input!\n");
+        return NULL;
+    }
+    if (parser(tl))
+    {
+        destroy_token_list(tl);
+        return NULL;
+    }
+    struct token_list *sy = shunting_yard(tl);
+    if (!sy)
+        return NULL;
+    return evaluate(sy, strlen(base), decimal_precision);
 }

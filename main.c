@@ -2,7 +2,9 @@
 #include <unistd.h>
 
 #include "src/handle_request.h"
+
 #define DEFAULT_BASE "0123456789"
+#define DEFAULT_MAX_PRECISION 100
 
 size_t string_to_size_t(const char *str)
 {
@@ -24,14 +26,14 @@ size_t string_to_size_t(const char *str)
 
 static int interactive(void)
 {
-    printf("Entering interactive mode.\nAny wrong request will properly close "
+    printf("Entering interactive mode.\nAny incorrect request will properly close "
            "the program.\n");
     int result = 0;
     while (!result)
     {
         printf("bistro$ ");
         fflush(stdout);
-        result = handle_request(stdin, stdout, DEFAULT_BASE, 100);
+        result = handle_request(stdin, stdout, DEFAULT_BASE, DEFAULT_MAX_PRECISION);
         if (!result)
             printf("\n");
     }

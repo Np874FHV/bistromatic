@@ -52,7 +52,7 @@ Run the main binary:
 ```bash
     $ ./main
     Entering interactive mode.
-    Any wrong request will properly close the program.
+    Any incorrect request will properly close the program.
     bistro$ 
 ```
 
@@ -86,13 +86,13 @@ For example:
 ```bash
     $ ./main
     Entering interactive mode.
-    Any wrong request will properly close the program.
+    Any incorrect request will properly close the program.
     bistro$ -+-2
     -2
     bistro$ 10+6 *7
     52
     bistro$ hello
-    Incorrect request! # stderr
+    Incorrect input! # stderr
     $
 ```
 
