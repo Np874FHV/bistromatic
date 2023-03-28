@@ -8,20 +8,20 @@ This project is a calculator inspired from an EPITECH academic project that hand
 Clone the project
 
 ```bash
-    $ git clone https://github.com/Np874FHV/bistromatic.git
+    git clone https://github.com/Np874FHV/bistromatic.git
 ```
 
 Go to the project directory
 
 ```bash
-    $ cd bistromatic
+    cd bistromatic
 ```
 
 Create `bistro.a` static library to include it in a project. Be warned: `.o` object files will also be created.
 
 ```bash
-    $ make bistro
-    $ rm *.o  # To remove all created object files
+    make bistro
+    rm *.o  # To remove all created object files
 ```
 
 ## Run Locally
@@ -29,13 +29,13 @@ Create `bistro.a` static library to include it in a project. Be warned: `.o` obj
 Create main binary or use the given one. Be warned, a `bistro.a` and `.o` object files will also be created.
 
 ```bash
-    $ make main
+    make main
 ```
 
 You can delete all `make`-created files by using:
 
 ```bash
-    $ make clean
+    make clean
 ```
 
 You can use the `main` binary in three ways:
@@ -48,7 +48,7 @@ The base is 10 and the maximum decimal precision is 100 by default. You can easi
 Run the main binary:
 
 ```bash
-    $ ./main
+    ./main
     Entering interactive mode.
     Any incorrect request will properly close the program.
     bistro$ 
@@ -82,7 +82,7 @@ As indicated, an incorrect request will properly terminate the program.
 For example:
 
 ```bash
-    $ ./main
+    ./main
     Entering interactive mode.
     Any incorrect request will properly close the program.
     bistro$ -+-2
@@ -91,7 +91,6 @@ For example:
     52
     bistro$ hello
     Incorrect input! # stderr
-    $
 ```
 
 
@@ -108,13 +107,13 @@ Enter your request in stdin, then run main with exactly three arguments:
 For example:
 
 ```bash
-    $ ls
+    ls
     main
-    $ echo " 2^2+   1/3" | ./main out.txt 0123456789 4
-    $ ls
+    echo " 2^2+   1/3" | ./main out.txt 0123456789 4
+    ls
     main    out.txt
-    $ cat out.txt
-    4.3333$ 
+    cat out.txt
+    4.3333 
 ```
 
 Be careful, if the output file already exists, it will be overrided.
@@ -136,16 +135,16 @@ Run main with exactly four arguments:
 For example:
 
 ```bash
-    $ ls
+    ls
     input.txt    main
-    $ cat input.txt | cat -e
+    cat input.txt | cat -e
     10^10 + 1.001$
     This is a test.$
-    $ ./main input.txt out.txt 01 0
-    $ ls
+    ./main input.txt out.txt 01 0
+    ls
     input.txt    main    out.txt
-    $ cat out.txt
-    101.001$ 
+    cat out.txt
+    101.001 
 ```
 
 
@@ -197,7 +196,7 @@ struct number *get_result(FILE *input, const char *base, size_t decimal_precisio
 To run tests, run the following command
 
 ```bash
-    $ make testsuite
+    make testsuite
 ```
 
 A ```testsuite``` binary will be generated and automatically run once.
@@ -209,7 +208,7 @@ A future release may add an easier way to create tests, just by creating a file 
 You can also create the `debug`binay file:
 
 ```bash
-    $ make debug
+    make debug
 ```
 
 You can use the `debug` binary the same way as `main` (please refer to the Usage/Examples section), but `debug` is compiled with the `-g` flag, allowing you to use `gdb` and `valgrind` for example.
