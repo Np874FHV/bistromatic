@@ -241,7 +241,7 @@ You can use the `debug` binary the same way as `main` (please refer to the Usage
 
 - Power by a decimal number
 
-- `main` can be run in three ways (plese refer to Run Locally)
+- `main` can be run in three ways (please refer to Run Locally)
 
 - Testsuite
 
