@@ -45,10 +45,10 @@ struct number *euclidean_division_aux(struct number *a, struct number *b,
 
 int euclidean_division(struct number *a, struct number *b, int base)
 {
-    if (!is_whole(a) || !is_whole(b))
+    if (!is_whole(b))
     {
         fprintf(stderr,
-                "Cannot compute Euclidean division of decimal numbers.\n");
+                "Cannot compute Euclidean division by a decimal number.\n");
         return 1;
     }
 
@@ -56,6 +56,12 @@ int euclidean_division(struct number *a, struct number *b, int base)
     {
         fprintf(stderr, "Cannot compute Euclidean division by 0!\n");
         return 1;
+    }
+    if (a->decimal_part_size > 0)
+    {
+        free(a->decimal_part);
+        a->decimal_part_size = 0;
+        a->decimal_part = NULL;
     }
 
     if (b->whole_part_size > a->whole_part_size) // result is 0

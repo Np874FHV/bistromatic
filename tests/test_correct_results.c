@@ -187,6 +187,32 @@ Test(Correct_result, correctres6)
     remove(filenameout);
 }
 
+Test(Correct_result, correctres7)
+{
+    const char *filename = "correctres7.txt";
+    const char *filenameout = "outcorrectres5.txt";
+    const char *command = "(12.123//6)^-2\n";
+    FILE *file = fopen(filename, "w+");
+    if (!file)
+        return;
+    FILE *output = fopen(filenameout, "w+");
+    if (!output)
+    {
+        fclose(file);
+        return;
+    }
+    fwrite(command, sizeof(char), strlen(command), file);
+    fseek(file, 0, SEEK_SET);
+    handle_request(file, output, DB, 10);
+    fseek(output, 0, SEEK_SET);
+    char expected[] = "0.25";
+    cr_assert_eq(0, compare_output(output, expected));
+    fclose(file);
+    fclose(output);
+    remove(filename);
+    remove(filenameout);
+}
+
 Test(Power, negativepow)
 {
     const char *filename = "negativepow.txt";
