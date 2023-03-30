@@ -251,9 +251,11 @@ You can use the `debug` binary the same way as `main` (please refer to the Usage
 
 - No more than one number allocation by operation.
 
-- Divisions and modulo algorithms are based on the fast exponentiation: their complexity is logarithmic in the length of the number.
+- Euclidean division and modulo algorithms are based on the fast exponentiation: their complexity is logarithmic in the length of the number.
 
 ## Roadmap
+
+- Optimize the usual division.
  
 - Handle bugs, but I didn't find any in my tests for the moment.
 
