@@ -249,22 +249,11 @@ You can use the `debug` binary the same way as `main` (please refer to the Usage
 
 - Fast power: `a ^ 5 = a * ((a ^ 2) ^ 2)`
 
-- No more than one number allocation by operation. The usual division was the hardest function to implement. How to compute `13.78 / 4458.455455 = a / b` effectively? 
+- No more than one number allocation by operation.
 
-Consider `n` the length of the base.
-I implemented a function that tests if `b * n ^ (-i) > a`. If it is true, then substract `b * n ^ (-i)` to the result, without creating any temporary number. The brute-force solution was, in the previous example, to do 
+- Divisions and modulo algorithms are based on the fast exponentiation: their complexity is logarithmic in the length of the number.
 
-```
-13.78 -> 137.8
-137.8 -> 1378
-1378 -> 13780
-13780 >= 4458.455455 then substract...
-```
-
-Which is very slow.
 ## Roadmap
-
-- More efficients division algorithms. The regular division was the hardest part of the project, as I managed to allocate only one number (refer to Features). The currect algorithm is brute force: Substract while the dividend is greater than the divisor. Consequently, 1 000 000 000 / 1 is way too slow.
  
 - Handle bugs, but I didn't find any in my tests for the moment.
 
