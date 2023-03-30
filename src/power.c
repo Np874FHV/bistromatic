@@ -36,7 +36,8 @@ error_power_aux:
     return 1;
 }
 
-int power(struct number *a, struct number *b, int base, size_t decimal_precision)
+int power(struct number *a, struct number *b, int base,
+          size_t decimal_precision)
 {
     if (b->decimal_part_size > 0)
     {
@@ -52,7 +53,7 @@ int power(struct number *a, struct number *b, int base, size_t decimal_precision
             return 1;
         }
         b->positive = 1;
-        struct number *const_one = init_number(1,0);
+        struct number *const_one = init_number(1, 0);
         if (!const_one)
             return 1;
         const_one->whole_part[0] = 1;

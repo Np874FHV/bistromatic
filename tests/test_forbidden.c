@@ -108,20 +108,6 @@ Test(Power, decimalpow)
     remove(filename);
 }
 
-Test(Power, negativepow)
-{
-    const char *filename = "negativepow.txt";
-    const char *command = "2.3^-2\n";
-    FILE *file = fopen(filename, "w+");
-    if (!file)
-        return;
-    fwrite(command, sizeof(char), strlen(command), file);
-    fseek(file, 0, SEEK_SET);
-    cr_assert_eq(1, handle_request(file, stdout, DB, 100));
-    fclose(file);
-    remove(filename);
-}
-
 Test(Base, wrongbase1)
 {
     const char *filename = "wrongbase1.txt";

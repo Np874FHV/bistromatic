@@ -264,8 +264,8 @@ I implemented a function that tests if `b * n ^ (-i) > a`. If it is true, then s
 Which is very slow.
 ## Roadmap
 
-- More efficients division algorithms. The regular division was the hardest part of the project, as I managed to allocate only one number (refer to Features). The currect algorithm is brute force: Substract while the dividend is greater than the divisor. Consequeltly, 1 000 000 000 / 1 is way too slow. 
-
+- More efficients division algorithms. The regular division was the hardest part of the project, as I managed to allocate only one number (refer to Features). The currect algorithm is brute force: Substract while the dividend is greater than the divisor. Consequently, 1 000 000 000 / 1 is way too slow.
+ 
 - Handle bugs, but I didn't find any in my tests for the moment.
 
 
